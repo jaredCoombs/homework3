@@ -1,3 +1,14 @@
+//array of all charachters to be included in password. Upper, lower case. Numbers and special charachters.
+
+
+//Need prompts for password options after users after button pushed
+
+//Need a way to store user input
+
+//Need a function to use at least one of the charachter types
+
+
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -13,4 +24,3 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//
