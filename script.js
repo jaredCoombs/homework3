@@ -10,7 +10,8 @@ var specialCharachters = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
 var length = parseInt(prompt("How many characters do you want for your new password?")
 );
 if (isNaN(length) === true) {
-  alert("Oops! Password length must be stated as a number.");
+  alert("Oops! Password length must be stated as a number.")
+  writePassword()
 
 }
 if (length < 8) {
@@ -28,7 +29,7 @@ var hasSpecialCharachters = confirm(
 );
 
 var hasNumericCharacters = confirm(
-  "Click OK to confirm using numeric charachters."
+  "Click OK to confirm using numeric charachters."   //if cancel selected, error var is undefined.
 );
 
 var hasUpperCaseCharachters = confirm(
@@ -53,9 +54,36 @@ if (
 
 //Need a way to store user input
 
+var passwordOptions = {
+  length: length,
+  hasSpecialCharachters: hasSpecialCharachters,
+  hasNumericCharachters: hasNumericCharachters,
+  hasLowerCasedCharachters: hasLowerCasedCharachters,
+  hasUpperCasedCharachters: hasUpperCasedCharachters
+};
+passwordOptions;
 //Need a function to use at least one of  each of the charachter types
+function getRandom(arr) {
+  var ranIndex = Math.floor(Math.random() * arr.length);
+  var ranElement = arr[ranIndex];
+  return ranElement;
+}
 
+//generate password
+function generatePassword() {
+  var charSet = "";
+  if (charType.toLowerCase === "lowercase") {
+    charSet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x,', 'y', 'z'];
+  } else if (charType.toLowerCase === "uppercase") {
+    charSet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  } else if (charType.toLowerCase === "numeric") {
+    charSet = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  } else if (charType.toLowerCase === "special") {
+    charSet = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+',
+      '[', '{', ']', '}',];
+  }
 
+}
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
