@@ -7,6 +7,7 @@ var specialCharachters = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')',
 
 
 //Need prompts for password options after users after button pushed
+
 var length = parseInt(prompt("How many characters do you want for your new password?")
 );
 if (isNaN(length) === true) {
